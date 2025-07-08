@@ -1,0 +1,379 @@
+\doxysection{Server Class Reference}
+\hypertarget{classServer}{}\label{classServer}\index{Server@{Server}}
+
+
+Handles user management, product transactions, chat messages, and automatic logout after 3 minutes of inactivity.  
+
+
+
+
+{\ttfamily \#include $<$Server.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classServer_ad5ec9462b520e59f7ea831e157ee5e59}\label{classServer_ad5ec9462b520e59f7ea831e157ee5e59} 
+{\bfseries Server} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classServer}{Server} and initializes products. Starts the inactivity monitor thread. \end{DoxyCompactList}\item 
+\Hypertarget{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Server} ()
+\begin{DoxyCompactList}\small\item\em Destructor stops the inactivity monitor thread cleanly. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServer_a605f62ab4d4d6b556003f11a62932e42}{signin}} (const std\+::string \&username, const std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Signs in a user with the given username and password. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_a79480ada3a08a8982d9027a727eb2d3a}{register\+\_\+user}} (const std\+::string \&username, const std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Registers a new user with username and password. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a802a136eca677d19e69a70f35ce4f0b0}{signout}} (int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Signs out a user by session ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUser}{User}} \& \mbox{\hyperlink{classServer_ac8fba66c7355ac5c0d627f37ee7a1d2e}{getuserbysessionid}} (int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Returns reference to \doxylink{classUser}{User} object by session ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_a5a065ccc702f6e42f55b1d3242ea2be0}{checkifsessionidisvalid}} (int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Checks if a session ID is currently valid. \end{DoxyCompactList}\item 
+std\+::map$<$ int, int $>$ \mbox{\hyperlink{classServer_a2c2be7f0c14029a127e93337e4b9cb69}{list\+\_\+of\+\_\+own\+\_\+inventory}} (int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Gets the user\textquotesingle{}s inventory (product ID to quantity). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classServer_a2f6b072013ef2fae22e77824d529867f}{wallet}} (int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Returns the user\textquotesingle{}s current wallet balance. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_aaa434038dd0d356dfa8ca4460f6d9109}{buy}} (int product\+\_\+id, int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Buys a product and adds it to user\textquotesingle{}s inventory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_a8f1acefd799559c5f414dc60aeba0ffe}{sell}} (int product\+\_\+id, int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Sells a product from user\textquotesingle{}s inventory. \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{classProduct}{Product}} $>$ \mbox{\hyperlink{classServer_a5cd0e3e68e61e23d36345b79c9286154}{products\+\_\+list}} (int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Returns a list of all products. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classServer_a3423acdf5101828a3404006eaaff163f}{product\+\_\+price}} (int product\+\_\+id, int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Gets the current price of a product. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{classServer_afe7577e82f9e2bd7a26622fb6205dcba}{getmessages}} (const int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Returns all chat messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a0fce02c16f326fba4808b42ce3fde715}{sendmessage}} (const int session\+\_\+id, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Adds a message to the chat. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classServer_af586cb646beac17cea5526a88cd2b539}{random\+\_\+percent}} (float min\+\_\+percent, float max\+\_\+percent)
+\begin{DoxyCompactList}\small\item\em Generates a random float between min\+\_\+percent and max\+\_\+percent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles user management, product transactions, chat messages, and automatic logout after 3 minutes of inactivity. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classServer_aaa434038dd0d356dfa8ca4460f6d9109}\index{Server@{Server}!buy@{buy}}
+\index{buy@{buy}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{buy()}{buy()}}
+{\footnotesize\ttfamily \label{classServer_aaa434038dd0d356dfa8ca4460f6d9109} 
+bool Server\+::buy (\begin{DoxyParamCaption}\item[{int}]{product\+\_\+id}{, }\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Buys a product and adds it to user\textquotesingle{}s inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+\_\+id} & The product ID to buy. \\
+\hline
+{\em session\+\_\+id} & The user\textquotesingle{}s session ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if purchase successful. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if product not found or insufficient funds. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_a5a065ccc702f6e42f55b1d3242ea2be0}\index{Server@{Server}!checkifsessionidisvalid@{checkifsessionidisvalid}}
+\index{checkifsessionidisvalid@{checkifsessionidisvalid}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{checkifsessionidisvalid()}{checkifsessionidisvalid()}}
+{\footnotesize\ttfamily \label{classServer_a5a065ccc702f6e42f55b1d3242ea2be0} 
+bool Server\+::checkifsessionidisvalid (\begin{DoxyParamCaption}\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a session ID is currently valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+id} & The session ID to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if valid, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classServer_afe7577e82f9e2bd7a26622fb6205dcba}\index{Server@{Server}!getmessages@{getmessages}}
+\index{getmessages@{getmessages}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{getmessages()}{getmessages()}}
+{\footnotesize\ttfamily \label{classServer_afe7577e82f9e2bd7a26622fb6205dcba} 
+std\+::list$<$ std\+::string $>$ Server\+::getmessages (\begin{DoxyParamCaption}\item[{const int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Returns all chat messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+id} & The user\textquotesingle{}s session ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of chat messages as strings. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if session ID invalid. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_ac8fba66c7355ac5c0d627f37ee7a1d2e}\index{Server@{Server}!getuserbysessionid@{getuserbysessionid}}
+\index{getuserbysessionid@{getuserbysessionid}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{getuserbysessionid()}{getuserbysessionid()}}
+{\footnotesize\ttfamily \label{classServer_ac8fba66c7355ac5c0d627f37ee7a1d2e} 
+\mbox{\hyperlink{classUser}{User}} \& Server\+::getuserbysessionid (\begin{DoxyParamCaption}\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Returns reference to \doxylink{classUser}{User} object by session ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+id} & The session ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \doxylink{classUser}{User} object. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if session ID is invalid or not found. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_a2c2be7f0c14029a127e93337e4b9cb69}\index{Server@{Server}!list\_of\_own\_inventory@{list\_of\_own\_inventory}}
+\index{list\_of\_own\_inventory@{list\_of\_own\_inventory}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{list\_of\_own\_inventory()}{list\_of\_own\_inventory()}}
+{\footnotesize\ttfamily \label{classServer_a2c2be7f0c14029a127e93337e4b9cb69} 
+std\+::map$<$ int, int $>$ Server\+::list\+\_\+of\+\_\+own\+\_\+inventory (\begin{DoxyParamCaption}\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Gets the user\textquotesingle{}s inventory (product ID to quantity). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+id} & The user\textquotesingle{}s session ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map of product IDs to quantities owned. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if session ID invalid. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_a3423acdf5101828a3404006eaaff163f}\index{Server@{Server}!product\_price@{product\_price}}
+\index{product\_price@{product\_price}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{product\_price()}{product\_price()}}
+{\footnotesize\ttfamily \label{classServer_a3423acdf5101828a3404006eaaff163f} 
+float Server\+::product\+\_\+price (\begin{DoxyParamCaption}\item[{int}]{product\+\_\+id}{, }\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Gets the current price of a product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+\_\+id} & The product ID. \\
+\hline
+{\em session\+\_\+id} & The user\textquotesingle{}s session ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current price as float. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if session ID or product invalid. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_a5cd0e3e68e61e23d36345b79c9286154}\index{Server@{Server}!products\_list@{products\_list}}
+\index{products\_list@{products\_list}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{products\_list()}{products\_list()}}
+{\footnotesize\ttfamily \label{classServer_a5cd0e3e68e61e23d36345b79c9286154} 
+std\+::list$<$ \mbox{\hyperlink{classProduct}{Product}} $>$ Server\+::products\+\_\+list (\begin{DoxyParamCaption}\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Returns a list of all products. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+id} & The user\textquotesingle{}s session ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of \doxylink{classProduct}{Product} objects. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if session ID invalid. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_af586cb646beac17cea5526a88cd2b539}\index{Server@{Server}!random\_percent@{random\_percent}}
+\index{random\_percent@{random\_percent}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{random\_percent()}{random\_percent()}}
+{\footnotesize\ttfamily \label{classServer_af586cb646beac17cea5526a88cd2b539} 
+float Server\+::random\+\_\+percent (\begin{DoxyParamCaption}\item[{float}]{min\+\_\+percent}{, }\item[{float}]{max\+\_\+percent}{}\end{DoxyParamCaption})}
+
+
+
+Generates a random float between min\+\_\+percent and max\+\_\+percent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+\_\+percent} & Minimum bound of random percentage (e.\+g., 0.\+90). \\
+\hline
+{\em max\+\_\+percent} & Maximum bound of random percentage (e.\+g., 1.\+10). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Random float in range \mbox{[}min\+\_\+percent, max\+\_\+percent\mbox{]}. 
+\end{DoxyReturn}
+\Hypertarget{classServer_a79480ada3a08a8982d9027a727eb2d3a}\index{Server@{Server}!register\_user@{register\_user}}
+\index{register\_user@{register\_user}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{register\_user()}{register\_user()}}
+{\footnotesize\ttfamily \label{classServer_a79480ada3a08a8982d9027a727eb2d3a} 
+bool Server\+::register\+\_\+user (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username}{, }\item[{const std\+::string \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Registers a new user with username and password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username for registration. \\
+\hline
+{\em password} & The password for registration. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if registration successful, false if username exists. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if username or password is empty. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_a8f1acefd799559c5f414dc60aeba0ffe}\index{Server@{Server}!sell@{sell}}
+\index{sell@{sell}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{sell()}{sell()}}
+{\footnotesize\ttfamily \label{classServer_a8f1acefd799559c5f414dc60aeba0ffe} 
+bool Server\+::sell (\begin{DoxyParamCaption}\item[{int}]{product\+\_\+id}{, }\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Sells a product from user\textquotesingle{}s inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+\_\+id} & The product ID to sell. \\
+\hline
+{\em session\+\_\+id} & The user\textquotesingle{}s session ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sale successful. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if product not found or not owned. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_a0fce02c16f326fba4808b42ce3fde715}\index{Server@{Server}!sendmessage@{sendmessage}}
+\index{sendmessage@{sendmessage}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{sendmessage()}{sendmessage()}}
+{\footnotesize\ttfamily \label{classServer_a0fce02c16f326fba4808b42ce3fde715} 
+void Server\+::sendmessage (\begin{DoxyParamCaption}\item[{const int}]{session\+\_\+id}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Adds a message to the chat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+id} & The user\textquotesingle{}s session ID. \\
+\hline
+{\em message} & The message string to add. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if session ID invalid. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_a605f62ab4d4d6b556003f11a62932e42}\index{Server@{Server}!signin@{signin}}
+\index{signin@{signin}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{signin()}{signin()}}
+{\footnotesize\ttfamily \label{classServer_a605f62ab4d4d6b556003f11a62932e42} 
+int Server\+::signin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username}{, }\item[{const std\+::string \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Signs in a user with the given username and password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user. \\
+\hline
+{\em password} & The password of the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Session ID if sign-\/in is successful, otherwise -\/1. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if username or password is empty, or user already logged in. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_a802a136eca677d19e69a70f35ce4f0b0}\index{Server@{Server}!signout@{signout}}
+\index{signout@{signout}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{signout()}{signout()}}
+{\footnotesize\ttfamily \label{classServer_a802a136eca677d19e69a70f35ce4f0b0} 
+void Server\+::signout (\begin{DoxyParamCaption}\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Signs out a user by session ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+id} & The session ID of the user to log out. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if session ID is invalid or not found. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classServer_a2f6b072013ef2fae22e77824d529867f}\index{Server@{Server}!wallet@{wallet}}
+\index{wallet@{wallet}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{wallet()}{wallet()}}
+{\footnotesize\ttfamily \label{classServer_a2f6b072013ef2fae22e77824d529867f} 
+float Server\+::wallet (\begin{DoxyParamCaption}\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Returns the user\textquotesingle{}s current wallet balance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+id} & The user\textquotesingle{}s session ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wallet balance as float. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if session ID invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Server.\+hpp\end{DoxyCompactItemize}

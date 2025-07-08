@@ -1,0 +1,229 @@
+\doxysection{User Class Reference}
+\hypertarget{classUser}{}\label{classUser}\index{User@{User}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUser_aaa64dd3a09e2f8781756033cea65aaa5}{User}} (const int userid, const std\+::string \&username, const std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classUser}{User} object with userid, username, and password. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUser_a0081f8a52f28dea7bd681f96a3d7842f}{getusername}} () const
+\begin{DoxyCompactList}\small\item\em Returns the username of the user. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUser_ace83809468650178dde5f46b8b322ef2}{getpassword}} () const
+\begin{DoxyCompactList}\small\item\em Returns the password of the user. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUser_a0f6bc057f7b85b5766f1882c31ee0cac}{getaktivesessionid}} () const
+\begin{DoxyCompactList}\small\item\em Returns the active session ID of the user. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classUser_aec35fed71e6fad99117dcc7256dc8df9}{getwallet}} () const
+\begin{DoxyCompactList}\small\item\em Returns the wallet balance of the user. \end{DoxyCompactList}\item 
+std\+::map$<$ int, int $>$ \mbox{\hyperlink{classUser_aecb17ea5a4e1e3ff79de44083b4e4855}{getstock}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stock of the user, where the key is product\+\_\+id and the value is the quantity owned. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUser_ae80b0712a3db5d3f11a31c9e89e267a0}{getuser\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Returns the user ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a44b9ebdf006ffc36c508b2105700f5e2}{setusername}} (const std\+::string \&username)
+\begin{DoxyCompactList}\small\item\em Sets the username of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a8833e3938c33d74672bdcd050c8239d0}{setpassword}} (const std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Sets the password of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a84d0f585f283e84906e91cf6d29c2df3}{setaktivesessionid}} (int session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Sets the active session ID of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_aed22b7f209165ee712b6dae9475bdc7e}{setwallet}} (float wallet)
+\begin{DoxyCompactList}\small\item\em Sets the wallet balance of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a1a01e5023665e53759b27f2a749f801c}{setstock}} (const std\+::map$<$ int, int $>$ \&stock)
+\begin{DoxyCompactList}\small\item\em Sets the stock of the user, where the key is product\+\_\+id and the value is the quantity owned. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_ae26a65e795b9dd2806e366448732278e}{setuser\+ID}} (int userid)
+\begin{DoxyCompactList}\small\item\em Sets the user ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUser_aaa64dd3a09e2f8781756033cea65aaa5}\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily \label{classUser_aaa64dd3a09e2f8781756033cea65aaa5} 
+User\+::\+User (\begin{DoxyParamCaption}\item[{const int}]{userid}{, }\item[{const std\+::string \&}]{username}{, }\item[{const std\+::string \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classUser}{User} object with userid, username, and password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em userid} & \\
+\hline
+{\em username} & \\
+\hline
+{\em password} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUser_a0f6bc057f7b85b5766f1882c31ee0cac}\index{User@{User}!getaktivesessionid@{getaktivesessionid}}
+\index{getaktivesessionid@{getaktivesessionid}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getaktivesessionid()}{getaktivesessionid()}}
+{\footnotesize\ttfamily \label{classUser_a0f6bc057f7b85b5766f1882c31ee0cac} 
+int User\+::getaktivesessionid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the active session ID of the user. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classUser_ace83809468650178dde5f46b8b322ef2}\index{User@{User}!getpassword@{getpassword}}
+\index{getpassword@{getpassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getpassword()}{getpassword()}}
+{\footnotesize\ttfamily \label{classUser_ace83809468650178dde5f46b8b322ef2} 
+std\+::string User\+::getpassword (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the password of the user. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{classUser_aecb17ea5a4e1e3ff79de44083b4e4855}\index{User@{User}!getstock@{getstock}}
+\index{getstock@{getstock}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getstock()}{getstock()}}
+{\footnotesize\ttfamily \label{classUser_aecb17ea5a4e1e3ff79de44083b4e4855} 
+std\+::map$<$ int, int $>$ User\+::getstock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the stock of the user, where the key is product\+\_\+id and the value is the quantity owned. 
+
+\begin{DoxyReturn}{Returns}
+std\+::map$<$int, int$>$ 
+\end{DoxyReturn}
+\Hypertarget{classUser_ae80b0712a3db5d3f11a31c9e89e267a0}\index{User@{User}!getuserID@{getuserID}}
+\index{getuserID@{getuserID}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getuserID()}{getuserID()}}
+{\footnotesize\ttfamily \label{classUser_ae80b0712a3db5d3f11a31c9e89e267a0} 
+int User\+::getuser\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the user ID. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classUser_a0081f8a52f28dea7bd681f96a3d7842f}\index{User@{User}!getusername@{getusername}}
+\index{getusername@{getusername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getusername()}{getusername()}}
+{\footnotesize\ttfamily \label{classUser_a0081f8a52f28dea7bd681f96a3d7842f} 
+std\+::string User\+::getusername (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the username of the user. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{classUser_aec35fed71e6fad99117dcc7256dc8df9}\index{User@{User}!getwallet@{getwallet}}
+\index{getwallet@{getwallet}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getwallet()}{getwallet()}}
+{\footnotesize\ttfamily \label{classUser_aec35fed71e6fad99117dcc7256dc8df9} 
+float User\+::getwallet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the wallet balance of the user. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\Hypertarget{classUser_a84d0f585f283e84906e91cf6d29c2df3}\index{User@{User}!setaktivesessionid@{setaktivesessionid}}
+\index{setaktivesessionid@{setaktivesessionid}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setaktivesessionid()}{setaktivesessionid()}}
+{\footnotesize\ttfamily \label{classUser_a84d0f585f283e84906e91cf6d29c2df3} 
+void User\+::setaktivesessionid (\begin{DoxyParamCaption}\item[{int}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Sets the active session ID of the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUser_a8833e3938c33d74672bdcd050c8239d0}\index{User@{User}!setpassword@{setpassword}}
+\index{setpassword@{setpassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setpassword()}{setpassword()}}
+{\footnotesize\ttfamily \label{classUser_a8833e3938c33d74672bdcd050c8239d0} 
+void User\+::setpassword (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Sets the password of the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUser_a1a01e5023665e53759b27f2a749f801c}\index{User@{User}!setstock@{setstock}}
+\index{setstock@{setstock}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setstock()}{setstock()}}
+{\footnotesize\ttfamily \label{classUser_a1a01e5023665e53759b27f2a749f801c} 
+void User\+::setstock (\begin{DoxyParamCaption}\item[{const std\+::map$<$ int, int $>$ \&}]{stock}{}\end{DoxyParamCaption})}
+
+
+
+Sets the stock of the user, where the key is product\+\_\+id and the value is the quantity owned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stock} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUser_ae26a65e795b9dd2806e366448732278e}\index{User@{User}!setuserID@{setuserID}}
+\index{setuserID@{setuserID}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setuserID()}{setuserID()}}
+{\footnotesize\ttfamily \label{classUser_ae26a65e795b9dd2806e366448732278e} 
+void User\+::setuser\+ID (\begin{DoxyParamCaption}\item[{int}]{userid}{}\end{DoxyParamCaption})}
+
+
+
+Sets the user ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em userid} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUser_a44b9ebdf006ffc36c508b2105700f5e2}\index{User@{User}!setusername@{setusername}}
+\index{setusername@{setusername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setusername()}{setusername()}}
+{\footnotesize\ttfamily \label{classUser_a44b9ebdf006ffc36c508b2105700f5e2} 
+void User\+::setusername (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username}{}\end{DoxyParamCaption})}
+
+
+
+Sets the username of the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUser_aed22b7f209165ee712b6dae9475bdc7e}\index{User@{User}!setwallet@{setwallet}}
+\index{setwallet@{setwallet}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setwallet()}{setwallet()}}
+{\footnotesize\ttfamily \label{classUser_aed22b7f209165ee712b6dae9475bdc7e} 
+void User\+::setwallet (\begin{DoxyParamCaption}\item[{float}]{wallet}{}\end{DoxyParamCaption})}
+
+
+
+Sets the wallet balance of the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wallet} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/User.\+hpp\end{DoxyCompactItemize}

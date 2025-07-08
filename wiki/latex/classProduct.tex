@@ -1,0 +1,132 @@
+\doxysection{Product Class Reference}
+\hypertarget{classProduct}{}\label{classProduct}\index{Product@{Product}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classProduct_aa955a002ea00b1306772f0fe8f621f66}\label{classProduct_aa955a002ea00b1306772f0fe8f621f66} 
+{\bfseries Product} (int product\+\_\+id, std\+::string product\+\_\+name, float start\+\_\+price)
+\item 
+int \mbox{\hyperlink{classProduct_a9f513e07489587e793040a7bce7d6b08}{getproductid}} () const
+\begin{DoxyCompactList}\small\item\em Returns the unique identifier for the product. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classProduct_a527e64c46481d14fda047f5735105cb4}{getproductname}} () const
+\begin{DoxyCompactList}\small\item\em Returns the name of the product. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classProduct_a296f13765bd8dc80a9dc4a0129ee60c3}{getcurrentprice}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current price of the product. \end{DoxyCompactList}\item 
+std\+::map$<$ int64\+\_\+t, float $>$ \mbox{\hyperlink{classProduct_ae23ef597afdf719abf7f7a0c1ccdf65d}{getpricehistory}} () const
+\begin{DoxyCompactList}\small\item\em Returns the price history of the product, mapping timestamps to prices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProduct_adc9c787ffe3328462160c61fae1be12d}{setproductid}} (int ID)
+\begin{DoxyCompactList}\small\item\em Sets the unique identifier for the product. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProduct_af693c30feba4becef715e1d3b58ac5ec}{setproductname}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the product. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProduct_aa9c4bae344d41d8dafd052671763902a}{setcurrentprice}} (float price)
+\begin{DoxyCompactList}\small\item\em Sets the current price of the product and updates the price history with the current timestamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classProduct_a296f13765bd8dc80a9dc4a0129ee60c3}\index{Product@{Product}!getcurrentprice@{getcurrentprice}}
+\index{getcurrentprice@{getcurrentprice}!Product@{Product}}
+\doxysubsubsection{\texorpdfstring{getcurrentprice()}{getcurrentprice()}}
+{\footnotesize\ttfamily \label{classProduct_a296f13765bd8dc80a9dc4a0129ee60c3} 
+float Product\+::getcurrentprice (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the current price of the product. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\Hypertarget{classProduct_ae23ef597afdf719abf7f7a0c1ccdf65d}\index{Product@{Product}!getpricehistory@{getpricehistory}}
+\index{getpricehistory@{getpricehistory}!Product@{Product}}
+\doxysubsubsection{\texorpdfstring{getpricehistory()}{getpricehistory()}}
+{\footnotesize\ttfamily \label{classProduct_ae23ef597afdf719abf7f7a0c1ccdf65d} 
+std\+::map$<$ int64\+\_\+t, float $>$ Product\+::getpricehistory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the price history of the product, mapping timestamps to prices. 
+
+\begin{DoxyNote}{Note}
+timestamps are microsenconds since epoch 
+
+timestamps -\/\texorpdfstring{$>$}{>} price 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+std\+::map$<$int64\+\_\+t, float$>$ 
+\end{DoxyReturn}
+\Hypertarget{classProduct_a9f513e07489587e793040a7bce7d6b08}\index{Product@{Product}!getproductid@{getproductid}}
+\index{getproductid@{getproductid}!Product@{Product}}
+\doxysubsubsection{\texorpdfstring{getproductid()}{getproductid()}}
+{\footnotesize\ttfamily \label{classProduct_a9f513e07489587e793040a7bce7d6b08} 
+int Product\+::getproductid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the unique identifier for the product. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classProduct_a527e64c46481d14fda047f5735105cb4}\index{Product@{Product}!getproductname@{getproductname}}
+\index{getproductname@{getproductname}!Product@{Product}}
+\doxysubsubsection{\texorpdfstring{getproductname()}{getproductname()}}
+{\footnotesize\ttfamily \label{classProduct_a527e64c46481d14fda047f5735105cb4} 
+std\+::string Product\+::getproductname (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the name of the product. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{classProduct_aa9c4bae344d41d8dafd052671763902a}\index{Product@{Product}!setcurrentprice@{setcurrentprice}}
+\index{setcurrentprice@{setcurrentprice}!Product@{Product}}
+\doxysubsubsection{\texorpdfstring{setcurrentprice()}{setcurrentprice()}}
+{\footnotesize\ttfamily \label{classProduct_aa9c4bae344d41d8dafd052671763902a} 
+void Product\+::setcurrentprice (\begin{DoxyParamCaption}\item[{float}]{price}{}\end{DoxyParamCaption})}
+
+
+
+Sets the current price of the product and updates the price history with the current timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classProduct_adc9c787ffe3328462160c61fae1be12d}\index{Product@{Product}!setproductid@{setproductid}}
+\index{setproductid@{setproductid}!Product@{Product}}
+\doxysubsubsection{\texorpdfstring{setproductid()}{setproductid()}}
+{\footnotesize\ttfamily \label{classProduct_adc9c787ffe3328462160c61fae1be12d} 
+void Product\+::setproductid (\begin{DoxyParamCaption}\item[{int}]{ID}{}\end{DoxyParamCaption})}
+
+
+
+Sets the unique identifier for the product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classProduct_af693c30feba4becef715e1d3b58ac5ec}\index{Product@{Product}!setproductname@{setproductname}}
+\index{setproductname@{setproductname}!Product@{Product}}
+\doxysubsubsection{\texorpdfstring{setproductname()}{setproductname()}}
+{\footnotesize\ttfamily \label{classProduct_af693c30feba4becef715e1d3b58ac5ec} 
+void Product\+::setproductname (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Sets the name of the product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Product.\+hpp\end{DoxyCompactItemize}

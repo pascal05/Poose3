@@ -1,0 +1,78 @@
+\doxysection{Server.\+hpp}
+\hypertarget{Server_8hpp_source}{}\label{Server_8hpp_source}\index{include/Server.hpp@{include/Server.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}User.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Product.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServer_ad5ec9462b520e59f7ea831e157ee5e59}{Server}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ std::map<int,\ User>\ registeredplayers;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ std::map<int,\ Product>\ products;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::set<int>\ aktive\_session\_ids;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ lastsessionid;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::list<std::string>\ Messages;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::map<int,\ std::chrono::steady\_clock::time\_point>\ session\_last\_active;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ std::mutex\ session\_mutex;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ std::atomic<bool>\ stop\_monitor\_thread;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ std::thread\ monitor\_thread;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ update\_session\_activity(\textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classServer_ad5ec9462b520e59f7ea831e157ee5e59}{Server}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{\string~Server}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classServer_a605f62ab4d4d6b556003f11a62932e42}{signin}}(\textcolor{keyword}{const}\ std::string\ \&username,\ \textcolor{keyword}{const}\ std::string\ \&password);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_a79480ada3a08a8982d9027a727eb2d3a}{register\_user}}(\textcolor{keyword}{const}\ std::string\ \&username,\ \textcolor{keyword}{const}\ std::string\ \&password);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_a802a136eca677d19e69a70f35ce4f0b0}{signout}}(\textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classUser}{User}}\ \&\mbox{\hyperlink{classServer_ac8fba66c7355ac5c0d627f37ee7a1d2e}{getuserbysessionid}}(\textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_a5a065ccc702f6e42f55b1d3242ea2be0}{checkifsessionidisvalid}}(\textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00117\ \ \ \ \ std::map<int,\ int>\ \mbox{\hyperlink{classServer_a2c2be7f0c14029a127e93337e4b9cb69}{list\_of\_own\_inventory}}(\textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classServer_a2f6b072013ef2fae22e77824d529867f}{wallet}}(\textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_aaa434038dd0d356dfa8ca4460f6d9109}{buy}}(\textcolor{keywordtype}{int}\ product\_id,\ \textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_a8f1acefd799559c5f414dc60aeba0ffe}{sell}}(\textcolor{keywordtype}{int}\ product\_id,\ \textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00151\ \ \ \ \ std::list<Product>\ \mbox{\hyperlink{classServer_a5cd0e3e68e61e23d36345b79c9286154}{products\_list}}(\textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classServer_a3423acdf5101828a3404006eaaff163f}{product\_price}}(\textcolor{keywordtype}{int}\ product\_id,\ \textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00168\ \ \ \ \ std::list<std::string>\ \mbox{\hyperlink{classServer_afe7577e82f9e2bd7a26622fb6205dcba}{getmessages}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ session\_id);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_a0fce02c16f326fba4808b42ce3fde715}{sendmessage}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ session\_id,\ \textcolor{keyword}{const}\ std::string\ \&message);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classServer_af586cb646beac17cea5526a88cd2b539}{random\_percent}}(\textcolor{keywordtype}{float}\ min\_percent,\ \textcolor{keywordtype}{float}\ max\_percent);}
+\DoxyCodeLine{00185\ \};}
+
+\end{DoxyCode}

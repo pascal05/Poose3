@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/unittests.dir/link.d CMakeFiles/unittests.dir/tests/unittests.cpp.o CMakeFiles/unittests.dir/src/Server.cpp.o CMakeFiles/unittests.dir/src/User.cpp.o CMakeFiles/unittests.dir/src/Product.cpp.o -o unittests  /usr/lib/libgtest.so.1.17.0 -lpthread

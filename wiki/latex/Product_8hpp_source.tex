@@ -1,0 +1,32 @@
+\doxysection{Product.\+hpp}
+\hypertarget{Product_8hpp_source}{}\label{Product_8hpp_source}\index{include/Product.hpp@{include/Product.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }Product\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ product\_id;}
+\DoxyCodeLine{00008\ \ \ \ \ std::string\ product\_name;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{float}\ current\_price;}
+\DoxyCodeLine{00010\ \ \ \ \ std::map<int64\_t,\ float>\ price\_history;\ \textcolor{comment}{//\ timestamp\ -\/>\ price}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ Product(\textcolor{keywordtype}{int}\ product\_id,\ std::string\ product\_name,\ \textcolor{keywordtype}{float}\ start\_price);\ \textcolor{comment}{//constructor}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classProduct_a9f513e07489587e793040a7bce7d6b08}{getproductid}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \mbox{\hyperlink{classProduct_a527e64c46481d14fda047f5735105cb4}{getproductname}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classProduct_a296f13765bd8dc80a9dc4a0129ee60c3}{getcurrentprice}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ std::map<int64\_t,\ float>\ \mbox{\hyperlink{classProduct_ae23ef597afdf719abf7f7a0c1ccdf65d}{getpricehistory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProduct_adc9c787ffe3328462160c61fae1be12d}{setproductid}}(\textcolor{keywordtype}{int}\ ID);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProduct_af693c30feba4becef715e1d3b58ac5ec}{setproductname}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProduct_aa9c4bae344d41d8dafd052671763902a}{setcurrentprice}}(\textcolor{keywordtype}{float}\ price);}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+
+\end{DoxyCode}
